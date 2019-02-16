@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>样式-style</title>
+    <script src="../lib/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 对象就是无序键值对的集合,如果属性里面包含‘-’，必须把属性用单引号括起来-->
+        <!--<h1 :style="{ color:'red','font-weight':200 }">这是一个h1</h1>-->
+
+        <!-- 将样式对象，定义到 data 中，并引用到 ：style 中
+             在 data 中定义样式；在元素中，通过属性绑定的形式，将形式对象应用到元素中
+        -->
+        <!--<h1 :style="styleObj1">这是一个h1</h1>-->
+
+        <!-- 在 ：style 中通过数组，引用多个 data 上的形式对象-->
+        <h1 :style="[styleObj1,styleObj2]">这是一个h1</h1>
+
+    </div>
+
+
+    <script>
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                styleObj1:{ color:'red','font-weight': 200 },
+                styleObj2:{'font-style':'italic'}
+            },
+            methods:{
+
+        }
+        })
+    </script>
+</body>
+</html>
